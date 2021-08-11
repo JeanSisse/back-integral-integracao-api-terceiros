@@ -23,18 +23,22 @@ Este recurso receberá apenas requisições GET e deverá possuir um parâmetro 
 
 Ao receber o domínio da empresa pelo parâmetro deveremos enviá-lo à API externa para consultar os dados da empresa.
 O endereço da API externa que devemos utilizar para isso é:
+
 ```
 https://companyenrichment.abstractapi.com/v1/
 ```
+
 No qual acrescentaremos dois parâmetros query:
-* **api_key**: utilizada para a autenticação e deverá possuir como valor a seguinte chave de teste: **34a8499969c4401daf6a685935323c1d**
-* **domain**: onde deveremos enviar o domínio da empresa que recebemos no parâmetro da nossa API.
+
+- **api_key**: utilizada para a autenticação e deverá possuir como valor a seguinte chave de teste: **34a8499969c4401daf6a685935323c1d**
+- **domain**: onde deveremos enviar o domínio da empresa que recebemos no parâmetro da nossa API.
 
 O objeto que será retornado da API externa será o objeto que retornaremos na nossa API! =D
 
 Mas antes de retorná-lo, deveremos guardar o que encontramos no array do arquivo **empresas.json**. Mas para isso, foi solicitada uma regra:
-* Guardar apenas os resultados cujo nome da empresa (propriedade **name** do objeto retornado) venha preenchido corretamente (não venha com null ou undefined).
-Portanto, guardaremos no array apenas os objetos das empresas que sejam retornadas com o nome preenchido.
+
+- Guardar apenas os resultados cujo nome da empresa (propriedade **name** do objeto retornado) venha preenchido corretamente (não venha com null ou undefined).
+  Portanto, guardaremos no array apenas os objetos das empresas que sejam retornadas com o nome preenchido.
 
 E independente de como o dado seja retornado da API externa, sempre retornaremos o exato mesmo objeto no response da nossa API.
 
@@ -44,9 +48,9 @@ Teste para algumas empresas que você conheça o domínio e não esqueça de ver
 
 Preencha a checklist para finalizar o exercício:
 
-- [ ] Resolver o exercício
-- [ ] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos, ou `git add nome_do_arquivo` para adicionar um arquivo específico)
-- [ ] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
-- [ ] Pushar os commits na sua branch na origem (`git push origin nome-da-branch`)
+- [Ok] Resolver o exercício
+- [Ok] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos, ou `git add nome_do_arquivo` para adicionar um arquivo específico)
+- [Ok] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
+- [Ok] Pushar os commits na sua branch na origem (`git push origin nome-da-branch`)
 
 ###### tags: `nodeJS` `módulo 2` `exercício de classe` `express` `http` `api` `integracao com api` `api de terceiros` `autenticacao`
