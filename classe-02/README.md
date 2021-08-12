@@ -4,7 +4,7 @@
 
 ## Referendo por localização
 
-Neste exercício será necessário criar uma API para registrar votos de uma votação por localização. 
+Neste exercício será necessário criar uma API para registrar votos de uma votação por localização.
 
 A ideia é que em uma votação, a API possa verificar se o usuário que está enviando o voto está realmente no país correto da votação antes de registrar o voto.
 
@@ -17,9 +17,11 @@ Para encontrar a localização a partir de um IP utilizando a API mencionada aci
 ```
 https://ipgeolocation.abstractapi.com/v1/
 ```
+
 Passando dois parâmetros do tipo **query**:
-* **api_key**: que deverá receber como valor a chave de teste **58cafbe4558f425d8e8c731e3b26fbe0** para a autenticação
-* **ip_address**: que deverá receber o IP do usuário, por exemplo: **192.168.0.1**
+
+- **api_key**: que deverá receber como valor a chave de teste **58cafbe4558f425d8e8c731e3b26fbe0** para a autenticação
+- **ip_address**: que deverá receber o IP do usuário, por exemplo: **192.168.0.1**
 
 **Obs.:** Em um caso real, o IP seria identificado diretamente da requisição, mas isso só seria possível com uma API exposta na internet. Portanto, para facilitar, receberemos o IP do usuário por parâmetro, assim como receberemos o país onde ele se encontra também por parâmetro.
 
@@ -29,14 +31,14 @@ Dito isto, nossa API deverá possuir um único recurso chamado **votacao** que r
 
 Este nosso recurso deverá estar disponível no endereço http://localhost:8000/votacao, deverá receber apenas requisições **POST** e deverá receber dois parâmetros do tipo path (params) obrigatórios:
 
-* **pais**: deverá receber o nome do país em inglês ("Brazil", com "z", por exemplo) onde está acontecendo o referendo.
-* **ip**: deverá receber o endereço IP do usuário que está enviando o voto.
+- **pais**: deverá receber o nome do país em inglês ("Brazil", com "z", por exemplo) onde está acontecendo o referendo.
+- **ip**: deverá receber o endereço IP do usuário que está enviando o voto.
 
 Além dos parâmetros, deverá também ser enviado no corpo (body) da requisição, um objeto contendo uma propriedade **voto** que deve possuir valor booleano **true** ou **false**, representando respectivamente **sim** ou **nao** para o referendo. Portanto o corpo da nossa requisição deverá seguir o formato:
 
 ```json
 {
-    "voto": true
+  "voto": true
 }
 ```
 
@@ -46,14 +48,14 @@ Caso **o retorno** da API externa **seja válido**, deveremos selecionar a propr
 
 **Voto Válido**
 
-Após validar o país da localização do endereço IP, deveremos adicionar o voto em um **array** que deverá existir em um arquivo **votos.json** em nosso servidor. 
+Após validar o país da localização do endereço IP, deveremos adicionar o voto em um **array** que deverá existir em um arquivo **votos.json** em nosso servidor.
 
 Para adicionar o voto, deveremos criar um objeto que contenha duas propriedades: o **ip** informado pelo usuário e o **voto** (true ou false). Portanto deverá seguir o formato:
 
 ```json
 {
-    "ip": "200.45.187.22",
-    "voto": false
+  "ip": "200.45.187.22",
+  "voto": false
 }
 ```
 
@@ -73,9 +75,9 @@ Crie uma nova rota GET para que seja possível consultar todos os votos. A funç
 
 Preencha a checklist para finalizar o exercício:
 
-- [ ] Resolver o exercício
-- [ ] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos, ou `git add nome_do_arquivo` para adicionar um arquivo específico)
-- [ ] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
-- [ ] Pushar os commits na sua branch na origem (`git push origin nome-da-branch`)
+- [Ok] Resolver o exercício
+- [Ok] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos, ou `git add nome_do_arquivo` para adicionar um arquivo específico)
+- [Ok] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
+- [Ok] Pushar os commits na sua branch na origem (`git push origin nome-da-branch`)
 
 ###### tags: `nodeJS` `módulo 2` `exercício de classe` `express` `http` `api` `integracao com api` `api de terceiros` `autenticacao`
