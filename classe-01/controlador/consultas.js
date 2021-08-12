@@ -9,7 +9,7 @@ const getInfoDaEmpresa = async (req, res) => {
         
         if(consulta.data.name){
             const arrayEmpresas = JSON.parse(await fs.readFile("empresas.json"));
-            console.log(arrayEmpresas);
+            
             arrayEmpresas.push(consulta.data);
             await fs.writeFile("empresas.json", JSON.stringify(arrayEmpresas, null, 2));
         }
